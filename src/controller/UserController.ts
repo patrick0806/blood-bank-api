@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import { User } from "../models/User";
 class UserController {
   async getAll(req: Request, resp: Response) {
-    return resp.json({ message: "Hello World" });
+    return resp.json({ userID: req.userId,message: "Hello World" });
   }
 
   async createUser(req:Request,resp:Response){
