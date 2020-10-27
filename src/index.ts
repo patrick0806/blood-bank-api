@@ -1,5 +1,13 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
-import {User} from "./entity/User";
+import "./database/connection";
+import express from 'express';
+import routes from "./routes";
 
-createConnection().then(()=>console.log('conectado')).catch(error => console.log(error));
+const app = express();
+
+app.use(express.json());
+app.use(routes);
+
+
+
+app.listen(3030);
